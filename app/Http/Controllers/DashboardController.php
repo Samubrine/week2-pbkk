@@ -59,6 +59,11 @@ class DashboardController extends Controller
         return view('dashboard.mahasiswa', compact('nrp', 'name', 'major', 'description', 'courses'));
     }
 
+    public function invalidNrp()
+    {
+        return response()->view('errors.invalid_nrp', [], 400);
+    }
+
     public function kalkulator($ip1, $ip2)
     {
         $sum = (float) $ip1 + (float) $ip2;
